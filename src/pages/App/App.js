@@ -11,10 +11,13 @@ class App extends Component {
   INITIAL_STATE = {
     selColorIdx: 0,
     guesses: [this.getNewGuess()],
-    code: this.genCode()
+    code: this.genCode(),
   }
 
-  state = this.INITIAL_STATE
+  state = {
+    difficulty: 'Easy',
+    ...this.INITIAL_STATE
+  }
 
   getNewGuess() {
     return {
