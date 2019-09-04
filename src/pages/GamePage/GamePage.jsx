@@ -27,7 +27,7 @@ const GamePage = (props) => {
           <NewGameButton handleNewGameClick={props.handleNewGameClick}/>
         </div>
       </div>
-      <footer className='App-header-footer'>
+      <footer className='header-footer'>
         {(props.winTries ? `You Won in ${props.winTries} Guesses!` : 'Good Luck!')}
       </footer>
     </div>
