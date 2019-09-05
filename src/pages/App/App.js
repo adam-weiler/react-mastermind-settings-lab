@@ -34,6 +34,9 @@ class App extends Component {
   }
 
   genCode() {
+    // let numColors = this.state && colors[this.state.difficulty].length;
+    // numColors = numColors || 4;
+
     return new Array(4).fill().map(dummy => Math.floor(Math.random() * 4));
   }
 
@@ -143,13 +146,14 @@ class App extends Component {
           <Route exact path='/' render={() =>
             <GamePage
               winTries={winTries}
-              colors={colors}
+              colors={colors[this.state.difficulty]}
               selColorIdx={this.state.selColorIdx}
               guesses={this.state.guesses}
               handleColorSelection={this.handleColorSelection}
               handleNewGameClick={this.handleNewGameClick}
               handlePegClick={this.handlePegClick}
               handleScoreClick={this.handleScoreClick}
+              // difficulty={this.difficulty}
             />
           } />
           <Route exact path='/settings' render={props =>
