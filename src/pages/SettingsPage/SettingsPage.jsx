@@ -22,6 +22,10 @@ const SettingsPage = (props) => {
       >
         {item}
       </button>
+
+      { props.colorsLookup[item].map(colour => 
+          <div style={{backgroundColor: colour}}>{colour}</div>
+       )}
        --- {item} colours
     </div>
   ))

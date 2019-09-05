@@ -7,7 +7,7 @@ import SettingsPage from '../SettingsPage/SettingsPage';
 const colors = {
     Easy: ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'],
     Medium: ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD', '#c1dd7f'],
-    Hard: ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD', '#c1dd7f', '6f768e']
+    Hard: ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD', '#c1dd7f', '#6f768e']
   }
 
 class App extends Component {
