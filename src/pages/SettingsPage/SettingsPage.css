@@ -1,0 +1,13 @@
+.dot {
+    margin: -10px 6px;
+    height: 30px;
+    width: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn {
+    margin: 8px;
+    width: 100px;
+}

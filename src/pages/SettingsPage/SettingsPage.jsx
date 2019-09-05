@@ -3,19 +3,15 @@ import { Link } from 'react-router-dom';
 import './SettingsPage.css';
 
 const SettingsPage = (props) => {
-
   console.log(props.colorsLookup);
   console.log(props.difficulty);
   console.log(props.handleNewGameClick);
-
-  
   
   const colorKeys = Object.keys(props.colorsLookup);
   console.log(colorKeys);
 
   let allButtons = colorKeys.map(item => (
     <div>
-    
       <button
         className='btn btn-default'
         onClick={props.handleNewGameClick}
@@ -24,9 +20,8 @@ const SettingsPage = (props) => {
       </button>
 
       { props.colorsLookup[item].map(colour => 
-          <div style={{backgroundColor: colour}}>{colour}</div>
+          <div style={{backgroundColor: colour}} className='dot'></div> 
        )}
-       --- {item} colours
     </div>
   ))
 
@@ -36,7 +31,6 @@ const SettingsPage = (props) => {
       <Link to='/'>HOME</Link>
       <h1>Set Difficulty Level</h1>
       {allButtons}
-      <p>Cancel button</p>
       <Link className='btn btn-default GamePage-link-margin' to='/'>Cancel</Link>
     </div>
   );
