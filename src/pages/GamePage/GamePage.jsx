@@ -7,6 +7,9 @@ import NewGameButton from '../../components/NewGameButton/NewGameButton';
 import './GamePage.css';
 
 const GamePage = (props) => {
+
+  // console.log(props)
+
   return (
     <div className="App">
       <div className="flex-h align-flex-end">

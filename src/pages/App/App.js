@@ -157,7 +157,12 @@ class App extends Component {
             />
           } />
           <Route exact path='/settings' render={props =>
-            <SettingsPage {...props} />
+            <SettingsPage 
+            {...props} 
+            colorsLookup={colors}
+            difficulty={this.state.difficulty}
+            handleNewGameClick={this.handleNewGameClick}
+            />
           } />
         </Switch>
       </div>
