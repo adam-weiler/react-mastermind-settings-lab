@@ -34,16 +34,22 @@ class App extends Component {
   }
 
   genCode() {
-    // let numColors = this.state && colors[this.state.difficulty].length;
-    // numColors = numColors || 4;
+    // return new Array(4).fill().map(dummy => Math.floor(Math.random() * 4));
+    
+    let numColors = this.state && colors[this.state.difficulty].length;
+    numColors = numColors || 4;
 
-    return new Array(4).fill().map(dummy => Math.floor(Math.random() * 4));
+    return new Array(4).fill().map(dummy => Math.floor(Math.random() * numColors));
   }
 
   getWinTries() {
     // if winner, return num guesses, otherwise 0 (no winner)
     let lastGuess = this.state.guesses.length - 1;
     return this.state.guesses[lastGuess].score.perfect === 4 ? lastGuess + 1 : 0;
+  }
+
+  handleDifficultyChange = (level) => {
+    this.setState({difficulty: level}, () => this.handleNewGameClick());
   }
 
   handleColorSelection = (colorIdx) => {
@@ -161,7 +167,7 @@ class App extends Component {
             {...props} 
             colorsLookup={colors}
             difficulty={this.state.difficulty}
-            handleNewGameClick={this.handleNewGameClick}
+            handleDifficultyChange={this.handleDifficultyChange}
             />
           } />
         </Switch>

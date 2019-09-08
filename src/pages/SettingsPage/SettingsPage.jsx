@@ -3,28 +3,37 @@ import { Link } from 'react-router-dom';
 import './SettingsPage.css';
 
 const SettingsPage = (props) => {
-  console.log(props.colorsLookup);
-  console.log(props.difficulty);
-  console.log(props.handleNewGameClick);
+  const handleDifficultyChange = (level) => {
+    console.log(`New difficulty: ${level}`);
+    props.handleDifficultyChange(level);
+    props.history.push('/');
+  }
+
+  // console.log(props.colorsLookup);
+  // console.log(props.difficulty);
   
   const colorKeys = Object.keys(props.colorsLookup);
-  console.log(colorKeys);
+  // console.log(colorKeys);
 
-  let allButtons = colorKeys.map(item => (
-    <div>
+  const allButtons = colorKeys.map(level => (
+    <div key={level}>
       <button
         className='btn btn-default'
-        onClick={props.handleNewGameClick}
+        onClick={() => handleDifficultyChange(level)}
+        disabled={level === props.difficult}
       >
-        {item}
+        {level}
       </button>
 
-      { props.colorsLookup[item].map(colour => 
-          <div style={{backgroundColor: colour}} className='dot'></div> 
+      { props.colorsLookup[level].map(colour => 
+          <div 
+          style={{backgroundColor: colour}} 
+          className='dot'
+          key={colour}>
+          </div> 
        )}
     </div>
-  ))
-
+  ));
 
   return (
     <div>

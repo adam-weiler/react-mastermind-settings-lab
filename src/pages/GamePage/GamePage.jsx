@@ -11,7 +11,7 @@ const GamePage = (props) => {
   // console.log(props)
 
   return (
-    <div className="App">
+    <div className="GamePage">
       <div className="flex-h align-flex-end">
         <GameBoard
           colors={props.colors}
